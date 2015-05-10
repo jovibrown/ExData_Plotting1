@@ -21,7 +21,7 @@ setnames(DT, 1:9, c("Date","Time","Global_active_power", "Global_reactive_power"
 DateTime <-strptime(paste(DT$Date, DT$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 
 
-#Graphics
+#Graphics device
 png(filename="plot3.png",height=480,width=480,bg="white")
 
 
@@ -35,5 +35,5 @@ points(DateTime, DT$Sub_metering_3, col="blue", type="l")
 legend(x="topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c("black","red","blue"), lwd=1, lty=1)
 
 
-#Close graphic device
+#Close graphics device
 dev.off()

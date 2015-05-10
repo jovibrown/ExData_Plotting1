@@ -21,7 +21,7 @@ setnames(DT, 1:9, c("Date","Time","Global_active_power", "Global_reactive_power"
 DateTime <-strptime(paste(DT$Date, DT$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 
 
-#Graphics
+#Graphics device
 png(filename="plot4.png",height=480,width=480,bg="white")
 par(mfrow=c(2,2))
 
@@ -48,5 +48,5 @@ legend(x="topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=
 plot(DateTime, DT$Global_reactive_power, type="l", xlab="datetime", 
      ylab="Global_reactive_power")
 
-#Close graphic device
+#Close graphics device
 dev.off()

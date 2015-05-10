@@ -21,7 +21,7 @@ setnames(DT, 1:9, c("Date","Time","Global_active_power", "Global_reactive_power"
 DateTime <-strptime(paste(DT$Date, DT$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 
 
-#Graphics
+#Graphics device
 png(filename="plot2.png",height=480,width=480,bg="white")
 
 
@@ -30,5 +30,5 @@ plot(DateTime, DT$Global_active_power, type="l", xlab="",
      ylab="Global Active Power (kilowatts)")
 
 
-#Close graphic device
+#Close graphics device
 dev.off()
